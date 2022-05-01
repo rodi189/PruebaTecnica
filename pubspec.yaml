@@ -20,6 +20,7 @@ dependencies:
   #FIREBASE
   firebase_core: ^1.15.0
   firebase_auth: ^3.3.16
+  cloud_firestore: ^3.1.13
   #REQUEST
   dio: ^4.0.6
   #MD5
