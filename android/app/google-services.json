@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "65434480225",
+    "project_id": "pruebastecnicas-d953b",
+    "storage_bucket": "pruebastecnicas-d953b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65434480225:android:ebc17708b384d6425fc420",
+        "android_client_info": {
+          "package_name": "com.example.prueba_s2next"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65434480225-d9ffidsfo8h0bm9vjdqivqmhj36cvr45.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWKWHNhJJTMFFGKI4OtcWN4lSWv_uNHSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65434480225-d9ffidsfo8h0bm9vjdqivqmhj36cvr45.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
