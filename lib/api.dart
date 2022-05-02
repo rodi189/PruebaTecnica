@@ -5,14 +5,15 @@ import 'package:dio/dio.dart';
 import 'helpers.dart';
 
 String urlAPI = "https://pokeapi.co/api/v2/pokemon/";
-List listPokemons = [];
-Map mapPokemons = {};
+List listPokemonsAPI = [];
+Map mapPokemonsAPI = {};
 
 Future<void> getPokemons() async {
   Dio dio = Dio();
   //String resultado = "fail";
+  listPokemonsAPI = [];
+  mapPokemonsAPI = {};
 
-  print("getPokemons");
   for (var i = 0; i < 10; i++) {
     await dio.get("$urlAPI${i + 1}").then((value) {
       if (noVoid(value)) {
@@ -24,8 +25,8 @@ Future<void> getPokemons() async {
             "height": auxData["height"],
             "weight": auxData["weight"],
           };
-          listPokemons.add(customData);
-          mapPokemons["${i + 1}"] = customData;
+          listPokemonsAPI.add(customData);
+          mapPokemonsAPI["${i + 1}"] = customData;
         }
       }
     });
