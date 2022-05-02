@@ -9,7 +9,7 @@ import 'states_manage.dart';
 
 class HistorialPokemon extends StatefulWidget {
   final String pokedex;
-  HistorialPokemon({Key? key, required this.pokedex}) : super(key: key);
+  const HistorialPokemon({Key? key, required this.pokedex}) : super(key: key);
 
   @override
   // ignore: no_logic_in_create_state
@@ -96,7 +96,7 @@ class HistorialPokemonState extends State<HistorialPokemon> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.only(bottom: 2.0),
+              margin: const EdgeInsets.only(bottom: 2.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -116,7 +116,7 @@ class HistorialPokemonState extends State<HistorialPokemon> {
                   child: Row(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(right: 4.0),
+                        margin: const EdgeInsets.only(right: 4.0),
                         child: Text("Altura: $altura"),
                       ),
                       Container(

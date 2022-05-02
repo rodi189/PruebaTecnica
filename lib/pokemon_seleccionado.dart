@@ -108,29 +108,27 @@ class _PokemonSeleccionadoState extends State<PokemonSeleccionado> {
             Visibility(
               visible: workInProgress == false ? true : false,
               child: Container(
-                margin: EdgeInsets.only(top: 5.0),
+                margin: const EdgeInsets.only(top: 5.0),
                 child: Row(
                   children: [
                     Expanded(
-                      child: Container(
-                        child: TextButton(
-                          onPressed: workInProgress == true
-                              ? null
-                              : () async {
-                                  FocusScope.of(context)
-                                      .requestFocus(FocusNode());
-                                  Navigator.pushNamed(context, "historial",
-                                      arguments: {"pokedex": widget.pokedex});
-                                },
-                          child: const Text(
-                            "Historial",
-                            style: TextStyle(fontSize: 16, color: Colors.white),
-                          ),
-                          style: OutlinedButton.styleFrom(
-                              backgroundColor: Colors.blue,
-                              padding:
-                                  const EdgeInsets.only(top: 20, bottom: 20)),
+                      child: TextButton(
+                        onPressed: workInProgress == true
+                            ? null
+                            : () async {
+                                FocusScope.of(context)
+                                    .requestFocus(FocusNode());
+                                Navigator.pushNamed(context, "historial",
+                                    arguments: {"pokedex": widget.pokedex});
+                              },
+                        child: const Text(
+                          "Historial",
+                          style: TextStyle(fontSize: 16, color: Colors.white),
                         ),
+                        style: OutlinedButton.styleFrom(
+                            backgroundColor: Colors.blue,
+                            padding:
+                                const EdgeInsets.only(top: 20, bottom: 20)),
                       ),
                     ),
                   ],
@@ -171,7 +169,7 @@ class _PokemonSeleccionadoState extends State<PokemonSeleccionado> {
           children: [
             Expanded(
               child: Container(
-                margin: EdgeInsets.only(right: 2.0),
+                margin: const EdgeInsets.only(right: 2.0),
                 child: TextButton(
                   onPressed: () async {
                     setState(() {
@@ -179,11 +177,6 @@ class _PokemonSeleccionadoState extends State<PokemonSeleccionado> {
                       error = "";
                       FocusScope.of(context).requestFocus(FocusNode());
                     });
-                    Map<String, Object> dataToUpdate = {
-                      "name": nombre,
-                      "height": altura,
-                      "weight": peso
-                    };
                     error = await deletePokemon(widget.pokedex);
                     if (noVoid(error) == false) {
                       setState(() {

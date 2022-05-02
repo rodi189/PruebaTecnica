@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'api.dart';
@@ -116,7 +118,6 @@ class _LoginState extends State<Login> {
                     FocusScope.of(context).requestFocus(FocusNode());
                   });
                   String email = await getEmailForLogin(username);
-                  print(email);
                   if (noVoid(email) == true) {
                     username = email;
                   }

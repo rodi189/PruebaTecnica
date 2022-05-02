@@ -145,9 +145,6 @@ Future<String> saveLastDataPokemon(
     String pokedex, Map<String, dynamic> pokemonData) async {
   String result = "fail";
 
-  String date =
-      pokemonData["date"] ?? "${DateTime.now().millisecondsSinceEpoch}";
-
   Map<String, dynamic> dataToUpdate = {};
   dataToUpdate['versiones'] = FieldValue.arrayUnion([pokemonData]);
 

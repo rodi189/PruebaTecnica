@@ -8,7 +8,7 @@ import 'helpers.dart';
 import 'states_manage.dart';
 
 class Inicio extends StatefulWidget {
-  Inicio({Key? key}) : super(key: key);
+  const Inicio({Key? key}) : super(key: key);
 
   @override
   // ignore: no_logic_in_create_state
@@ -73,7 +73,7 @@ class InicioState extends State<Inicio> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.only(bottom: 2.0),
+              margin: const EdgeInsets.only(bottom: 2.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -89,7 +89,7 @@ class InicioState extends State<Inicio> {
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(right: 4.0),
+                  margin: const EdgeInsets.only(right: 4.0),
                   child: Text("Altura: $altura"),
                 ),
                 Container(

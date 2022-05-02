@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_null_comparison
+// ignore_for_file: unnecessary_null_comparison, invalid_use_of_protected_member
 
 import 'historial_pokemon_seleccionado.dart';
 import 'inicio.dart';
