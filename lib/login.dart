@@ -124,6 +124,7 @@ class _LoginState extends State<Login> {
                   if (noVoid(user) == true) {
                     await getPokemons();
                     await getPokemonsFirestore();
+                    await getPokemonsHistorial();
                     conbinarDatos();
                     initListeners();
                     print("pokemons listed: ${listPokemons.length}");

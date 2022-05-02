@@ -13,6 +13,7 @@ void main() async {
   if (user != null) {
     await getPokemons();
     await getPokemonsFirestore();
+    await getPokemonsHistorial();
     conbinarDatos();
     initListeners();
     print("pokemons listed: ${listPokemons.length}");
