@@ -24,6 +24,7 @@ Future<void> getPokemons() async {
             "name": auxData["name"],
             "height": auxData["height"],
             "weight": auxData["weight"],
+            "date": "${DateTime.now().millisecondsSinceEpoch}"
           };
           listPokemonsAPI.add(customData);
           mapPokemonsAPI["${i + 1}"] = customData;
