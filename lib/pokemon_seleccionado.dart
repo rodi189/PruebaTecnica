@@ -40,6 +40,26 @@ class _PokemonSeleccionadoState extends State<PokemonSeleccionado> {
 
   @override
   Widget build(BuildContext context) {
+    if (actualizadoPokemonSeleccionado == true) {
+      currentData = mapPokemons[widget.pokedex] ?? {};
+      nombre = changeToNewValue(nombre, currentData["name"]) == true
+          ? currentData["name"]
+          : nombre;
+      controllerNombre.text =
+          changeToNewValue(nombre, currentData["name"]) == true
+              ? currentData["name"]
+              : nombre;
+      altura = changeToNewValue(nombre, currentData["height"]) == true
+          ? currentData["height"]
+          : altura;
+      controllerAltura.text = "$altura";
+      peso = changeToNewValue(nombre, currentData["weight"]) == true
+          ? currentData["weight"]
+          : peso;
+      controllerPeso.text = "$peso";
+
+      actualizadoPokemonSeleccionado = false;
+    }
     return Scaffold(
       appBar: AppBar(),
       body: Container(
@@ -84,11 +104,51 @@ class _PokemonSeleccionadoState extends State<PokemonSeleccionado> {
                 keyboardType: TextInputType.phone,
               ),
             ),
-            buttonLoader()
+            buttonLoader(),
+            Visibility(
+              visible: workInProgress == false ? true : false,
+              child: Container(
+                margin: EdgeInsets.only(top: 5.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        child: TextButton(
+                          onPressed: workInProgress == true
+                              ? null
+                              : () async {
+                                  FocusScope.of(context)
+                                      .requestFocus(FocusNode());
+                                  Navigator.pushNamed(context, "historial",
+                                      arguments: {"pokedex": widget.pokedex});
+                                },
+                          child: const Text(
+                            "Historial",
+                            style: TextStyle(fontSize: 16, color: Colors.white),
+                          ),
+                          style: OutlinedButton.styleFrom(
+                              backgroundColor: Colors.blue,
+                              padding:
+                                  const EdgeInsets.only(top: 20, bottom: 20)),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
     );
+  }
+
+  bool changeToNewValue(var current, var newValue) {
+    if (newValue != current) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   Widget buttonLoader() {
@@ -179,7 +239,7 @@ class _PokemonSeleccionadoState extends State<PokemonSeleccionado> {
                   style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
                 style: OutlinedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Colors.green,
                     padding: const EdgeInsets.only(top: 20, bottom: 20)),
               ),
             ),
