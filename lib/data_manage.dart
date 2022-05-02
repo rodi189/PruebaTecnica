@@ -4,6 +4,9 @@ import 'firestore_db.dart';
 List listPokemons = [];
 Map mapPokemons = {};
 
+List listPokemonsHistorial = [];
+Map mapPokemonsHistorial = {};
+
 void conbinarDatos() {
   listPokemons = [];
   mapPokemons = {};
