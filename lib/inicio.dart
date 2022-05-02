@@ -107,7 +107,7 @@ class InicioState extends State<Inicio> {
     return Drawer(
       child: ListView(
         children: [
-          ListTile(
+          /*ListTile(
             onTap: () async {
               Navigator.pop(context);
               await resetDataFirestore();
@@ -117,7 +117,7 @@ class InicioState extends State<Inicio> {
               });
             },
             title: const Text("Reset data"),
-          ),
+          ),*/
           ListTile(
             onTap: () async {
               Navigator.pop(context);
