@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'historial_pokemon_seleccionado.dart';
 import 'inicio.dart';
 import 'login.dart';
 import 'nuevo_pokemon.dart';
@@ -40,6 +41,19 @@ Route<dynamic> getRoutes(RouteSettings settings) {
           myMap = {};
         }
         return NuevoPokemon(
+          pokedex: myMap["pokedex"] ?? "",
+        );
+      });
+      break;
+    case "historial":
+      return MaterialPageRoute(builder: (BuildContext context) {
+        Map myMap;
+        try {
+          myMap = argumentsSend as Map;
+        } catch (e) {
+          myMap = {};
+        }
+        return HistorialPokemon(
           pokedex: myMap["pokedex"] ?? "",
         );
       });
